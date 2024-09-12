@@ -40,7 +40,7 @@ SELECT * FROM (
 SELECT *, ROW_NUMBER() OVER(PARTITION BY category ORDER BY sales DESC) AS rn
 FROM cte
 ) AS A
-WHERE rn=1;
+WHERE rn = 1;
 
 
 -- cautam care subcategorie a avut cea mai mare crestere a profitului in 2023 comparativ cu 2022
