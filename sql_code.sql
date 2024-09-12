@@ -38,7 +38,7 @@ GROUP BY category, FORMAT(order_date, 'yyyyMM')
 )
 SELECT * FROM (
 SELECT *, ROW_NUMBER() OVER(PARTITION BY category ORDER BY sales DESC) AS rn
-FROM cte
+FROM CTE
 ) AS A
 WHERE rn = 1;
 
