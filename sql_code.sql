@@ -52,7 +52,7 @@ GROUP BY sub_category, YEAR(order_date)
 CTE2 AS (
 SELECT sub_category, 
 SUM(CASE WHEN order_year = 2022 THEN sales ELSE 0 END) AS sales_2022, 
-sum(CASE WHEN order_year = 2023 THEN sales ELSE 0 END) AS sales_2023
+SUM(CASE WHEN order_year = 2023 THEN sales ELSE 0 END) AS sales_2023
 FROM CTE
 GROUP BY sub_category
 )
